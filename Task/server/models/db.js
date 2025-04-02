@@ -16,6 +16,22 @@ const ClientBillSchema = new mongoose.Schema({
   differenceAmount: { type: Number, default: 0 },
 }, { timestamps: true });
 
-const Patient = mongoose.model("ClientBill", ClientBillSchema);
 
-export {Patient};
+const workstationSchema = new mongoose.Schema({
+  name: {type: String,required: true},
+  status: {type: String,enum: ['Active', 'Inactive', 'Maintenance'],default: 'Active'},
+  ipAddress: {type: String,required: true},
+  location: {type: String,required: true},
+  lastMaintenance: {type: Date,default: null},
+  specifications: {os: String,ram: String,processor: String,storage: String},
+  assignedTo: {type: String,default: ''}
+}, {
+  timestamps: true
+});
+
+
+const Patient = mongoose.model("ClientBill", ClientBillSchema);
+const Workers = mongoose.model('Workstation', workstationSchema);
+
+
+export {Patient,Workers};
