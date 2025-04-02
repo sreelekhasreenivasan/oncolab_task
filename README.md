@@ -42,3 +42,7 @@ Technologies used in the project:
 *   Frontend: React, React Router, Tailwind CSS
 *   Backend: Node.js, Express.js
 *   Database: MongoDB
+
+# Demo
+
+[Working Short Video](https://youtu.be/6X-tI41MBBc?si=pDv3TOyXMul4rneT)
